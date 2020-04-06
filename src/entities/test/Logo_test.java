@@ -1,4 +1,14 @@
-package entities.test;
+package src.entities.test;
 
-public class Logo_test {
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class LogoTest {
+
+	@Test
+	void testGenLogo() {
+		fail("Not yet implemented");
+	}
+
 }

@@ -1,36 +1,36 @@
-package entities.test;
+package src.entities.test;
 
-import entities.Order;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Date;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+class OrderTest {
+	
+	Order o1 = new Order(2,3,12.0,04/04/2020);
 
+	@Test
+	void testOrder() {
+		assertEquals(o1.orderID, 2);
+	}
 
-public class Order_test {
-    private Integer oid = 1;
-    private Integer uid = 1;
-    private Double amount = 100.0;
-    private Date date = new Date();
-    private Order order;
+	@Test
+	void testGetOrderTime() {
+		assertEquals(o1.getOrderTime(),04/04/2020);
+	}
 
-    public Order_test(){
-        this.order = new Order(this.oid,
-                this.uid,
-                this.amount,
-                this.date);
-    }
+	@Test
+	void testGetOrderID() {
+		assertEquals(o1.getOrderID(),2);
+	}
 
-    @Test(timeout = 10)
-    public void testCanGenInstance(){
-        assertEquals(this.oid, this.order.getOrderID());
-        assertEquals(this.oid, this.order.getUserID());
-        assertEquals(this.date, this.order.getOrderTime());
-        assertEquals(this.amount, this.order.getAmount());
-    }
+	@Test
+	void testGetUserID() {
+		assertEquals(o1.getUserID(),3);
+	}
 
-
-
+	@Test
+	void testGetAmount() {
+		assertEquals(o1.getAmount(),12.0);
+	}
 
 }

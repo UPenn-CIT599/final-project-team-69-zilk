@@ -1,4 +1,15 @@
-package entities.test;
+package src.entities.test;
 
-public class NormalUser_test {
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class NormalUserTest {
+
+	@Test
+	void testNormalUser() {
+		fail("Not yet implemented");
+	}
+
 }
+
