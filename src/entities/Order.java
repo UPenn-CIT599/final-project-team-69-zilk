@@ -4,8 +4,8 @@ import java.util.Date;
 
 /**
  * This construct an order object to keep order information
- * @author Karen
  *
+ * @author Karen
  */
 public class Order {
     private Integer orderID;
@@ -15,6 +15,7 @@ public class Order {
 
     /**
      * Constructor to obtain order information
+     *
      * @param oid
      * @param uid
      * @param amount
@@ -29,6 +30,7 @@ public class Order {
 
     /**
      * Method to retrieve order time
+     *
      * @return order time
      */
     public Date getOrderTime() {
@@ -37,6 +39,7 @@ public class Order {
 
     /**
      * Method to retrieve order iD
+     *
      * @return order ID for the order
      */
     public Integer getOrderID() {
@@ -45,6 +48,7 @@ public class Order {
 
     /**
      * Method to retrieve user ID
+     *
      * @return user ID for the order
      */
     public Integer getUserID() {
@@ -53,9 +57,10 @@ public class Order {
 
     /**
      * Method to retrieve the amount for the order
+     *
      * @return amount for the order
      */
-    public Double getAmount() { 
-    	return amount; 
+    public Double getAmount() {
+        return amount;
     }
 }

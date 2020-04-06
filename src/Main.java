@@ -3,10 +3,8 @@ import components.LoginModule;
 import components.SharedData;
 import components.ShoppingModule;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.Scanner;
 
 public class Main {
 

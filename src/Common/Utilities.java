@@ -1,12 +1,24 @@
-package Common;
+package common;
 
+/**
+ * This is the basic common utility class used to simplify redundant implementation.
+ **/
 public class Utilities {
-	
 
-    public static void addLines(String context){
-        }
+    /**
+     * Wrap up current output. e.g product.
+     **/
+    public static void addLines(String context) {
+        System.out.println("---------------------------------------------");
+        System.out.println(context);
+        System.out.println("---------------------------------------------");
+    }
 
-    public static void singleLine(){
-        }
+    /**
+     * Generate single dotted line.
+     **/
+    public static void singleLine() {
+        System.out.println("---------------------------------------------");
+    }
 
 }

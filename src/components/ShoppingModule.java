@@ -1,19 +1,22 @@
 package components;
 
-import Common.Utilities;
 import entities.Cart;
-import entities.Logo;
-import entities.Product;
 
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+
+/**
+ * The shopping module mainly controls the part to interact with shopping cart.
+ * 1. After login, user can see all the logo and products.
+ * 2. User can add product to cart or remove from cart.
+ * 3. User can router to different components.
+ **/
 
 public class ShoppingModule {
     private SharedData sd;
     private Cart cart;
 
     public ShoppingModule(SharedData sd) throws FileNotFoundException {
-        
+
     }
 
     private void showLogo() {
@@ -32,7 +35,7 @@ public class ShoppingModule {
     }
 
     private void removeFromCart(Integer productID) {
-     
+
     }
 
 }

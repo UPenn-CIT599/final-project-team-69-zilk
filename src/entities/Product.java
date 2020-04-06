@@ -2,8 +2,8 @@ package entities;
 
 /**
  * This constructs a product with different values
- * @author Karen
  *
+ * @author Karen
  */
 public class Product {
     private Integer productID;
@@ -12,8 +12,9 @@ public class Product {
 
     /**
      * A constructor to set up different values for a product
-     * @param id product's id
-     * @param name product's name
+     *
+     * @param id    product's id
+     * @param name  product's name
      * @param price product's price
      */
     public Product(Integer id, String name, Double price) {
@@ -24,6 +25,7 @@ public class Product {
 
     /**
      * A method to retrieve product ID
+     *
      * @return product's product ID
      */
     public Integer getProductID() {
@@ -32,6 +34,7 @@ public class Product {
 
     /**
      * A method to retrieve product price
+     *
      * @return product's price
      */
     public Double getProductPrice() {
@@ -40,6 +43,7 @@ public class Product {
 
     /**
      * A method to retrieve product name
+     *
      * @return product's name
      */
     public String getProductName() {
