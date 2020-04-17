@@ -1,6 +1,6 @@
-package components;
+package src.components;
 
-import entities.Product;
+import src.entities.Product;
 
 import java.io.IOException;
 import java.text.ParseException;

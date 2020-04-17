@@ -1,7 +1,7 @@
-import components.CheckOutModule;
-import components.LoginModule;
-import components.SharedData;
-import components.ShoppingModule;
+import src.components.CheckOutModule;
+import src.components.LoginModule;
+import src.components.SharedData;
+import src.components.ShoppingModule;
 
 import java.io.IOException;
 import java.text.ParseException;
