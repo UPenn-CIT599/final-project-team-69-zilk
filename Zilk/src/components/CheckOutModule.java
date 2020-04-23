@@ -21,6 +21,10 @@ public class CheckOutModule {
         }
     }
 
+    /**
+     * To show order confirmation
+     * @throws IOException
+     */
     private void showConfrimation() throws IOException {
         Scanner sc = this.sd.getSc();
         System.out.println("----------Please Confirm Your Order---------");

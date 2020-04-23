@@ -21,14 +21,20 @@ public class LoginModule {
         this.switcher();
         this.sd.setUser(user);
     }
-
+    
+    /**
+     * To show welcome message
+     */
     private void genWelcomeMsg() {
         String welcome = "Welcome to the Zilk website!\n";
         String guidance = "For new user, please type \"register\", for old user please type \"login\".";
         Utilities.addLines(welcome + guidance);
     }
 
-    /* Switch to register or login process.*/
+    /**
+     * Switch to register or login process
+     * @throws IOException
+     */
     private void switcher() throws IOException {
         Scanner sc = this.sd.getSc();
         String cmd = sc.nextLine().toLowerCase();
@@ -52,7 +58,10 @@ public class LoginModule {
         }
     }
 
-    /* Interact with the users data to confirm if user exist.*/
+    /**
+     * Interact with the users data to confirm if user exists
+     * @throws IOException
+     */
     private void Login() throws IOException {
         // initial login
         Scanner sc = this.sd.getSc();
@@ -86,7 +95,10 @@ public class LoginModule {
         }
     }
 
-    /* Validate new user and store user data. */
+    /**
+     * To validate new user and store user data
+     * @throws IOException
+     */
     private void Register() throws IOException {
         Scanner sc = this.sd.getSc();
         String username, password;

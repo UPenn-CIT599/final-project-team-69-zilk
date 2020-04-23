@@ -1,42 +1,43 @@
 package src.entities.test;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import src.entities.Cart;
+import src.entities.NormalUser;
+import src.entities.Product;
+
+//import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * This is the unit test part for Cart.
  **/
 class CartTest {
 
-    @Test
-    void testCart() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    void testAddToCart() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    void testRemoveFromCart() {
-        fail("Not yet implemented");
-    }
+    Product p1 = new Product(1, "a1b1", 12.50);
+    Product p2 = new Product(3, "h5b5", 13.50);
+    
+    NormalUser u1 = new NormalUser(0, "karen", "123");
+    
+    Cart c1 = new Cart(u1);
+    
 
     @Test
     void testHasProduct() {
-        fail("Not yet implemented");
+    	
+    	c1.addToCart(p1);
+    	c1.addToCart(p2);
+    	assertTrue(c1.hasProduct(p1));
     }
 
-    @Test
+	@Test
     void testShowAmount() {
-        fail("Not yet implemented");
-    }
-
-    @Test
-    void testGetproducts() {
-        fail("Not yet implemented");
+		
+		c1.addToCart(p1);
+    	c1.addToCart(p2);
+		assertEquals(c1.showAmount(), 26.0);
+        
     }
 
 }

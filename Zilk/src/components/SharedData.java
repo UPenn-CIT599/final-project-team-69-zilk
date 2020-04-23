@@ -49,47 +49,86 @@ public class SharedData {
         this.loadUsers();
         this.loadOrders();
     }
-
+    
+    /**
+     * To create a hashmap for product list
+     * @return product list
+     */
     public HashMap<Integer, Product> getProducts() {
         return products;
     }
-
+    
+    /**
+     * To create a hashmap for user list
+     * @return user list
+     */
     public HashMap<String, NormalUser> getUsers() {
         return users;
     }
-
+    
+    /**
+     * @return the cart
+     */
     public Cart getCart() {
         return cart;
     }
-
+    
+    /**
+     * set the cart to be the input cart
+     * @param cart
+     */
     public void setCart(Cart cart) {
         this.cart = cart;
     }
-
+    
+    /**
+     * @return scanner
+     */
     public Scanner getSc() {
         return sc;
     }
-
+    
+    /**
+     * @return the status of checkout
+     */
     public boolean hasCheckout() {
         return this.isCheckOut;
     }
-
+    
+    /**
+     * @return user
+     */
     public NormalUser getUser() {
         return this.user;
     }
-
+    
+    /**
+     * Set user to be the input user 
+     * @param user
+     */
     public void setUser(NormalUser user) {
         this.user = user;
     }
-
+    
+    /**
+     * @return the next userID
+     */
     public Integer getNextUserID() {
         return nextUserID;
     }
 
+    /**
+     * Set the check out status as the input status
+     * @param checkOut
+     */
     public void setCheckOut(boolean checkOut) {
         isCheckOut = checkOut;
     }
-
+    
+    /**
+     * Record the order
+     * @throws IOException
+     */
     public void updateOrder() throws IOException {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
@@ -104,12 +143,22 @@ public class SharedData {
         Files.write(path, newOrder.getBytes(), StandardOpenOption.APPEND);
     }
 
+    /**
+     * Record the user
+     * @param username
+     * @param password
+     * @throws IOException
+     */
     public void updateUsers(String username, String password) throws IOException {
         String newUser = String.format("\r\n%d %s %s", this.nextUserID, username, password);
         Path path = Paths.get(this.userPath);
         Files.write(path, newUser.getBytes(), StandardOpenOption.APPEND);
     }
 
+    /**
+     * Load products from the product list
+     * @throws FileNotFoundException
+     */
     private void loadProducts() throws FileNotFoundException {
         Scanner myReader = new Scanner(new File(productPath));
         while (myReader.hasNextLine()) {
@@ -120,6 +169,10 @@ public class SharedData {
         myReader.close();
     }
 
+    /**
+     * Load users from the user list
+     * @throws FileNotFoundException
+     */
     private void loadUsers() throws FileNotFoundException {
         Scanner myReader = new Scanner(new File(userPath));
         while (myReader.hasNextLine()) {
@@ -133,7 +186,12 @@ public class SharedData {
         this.nextUserID++;
         myReader.close();
     }
-
+    
+    /**
+     * Load orders from the order list
+     * @throws FileNotFoundException
+     * @throws ParseException
+     */
     private void loadOrders() throws FileNotFoundException, ParseException {
         Scanner myReader = new Scanner(new File(orderPath));
         while (myReader.hasNextLine()) {

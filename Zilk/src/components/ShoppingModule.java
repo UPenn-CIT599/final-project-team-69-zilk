@@ -29,12 +29,18 @@ public class ShoppingModule {
         this.sd.setCart(this.cart);
     }
 
+    /**
+     * To show logo of the website
+     */
     private void showLogo() {
         System.out.println("----------------------------------------");
         Logo.genLogo();
         System.out.println("----------------------------------------");
     }
 
+    /**
+     * To show the information of each product
+     */
     private void showProducts() {
         for (Integer pid : this.sd.getProducts().keySet()) {
             Product p = this.sd.getProducts().get(pid);
@@ -43,6 +49,9 @@ public class ShoppingModule {
         Utilities.singleLine();
     }
 
+    /**
+     * To display instruction and options for further actions
+     */
     private void switcher() {
         Utilities.addLines("Type any key to show guidance.");
         Scanner sc = this.sd.getSc();
@@ -68,7 +77,10 @@ public class ShoppingModule {
         }
         Utilities.addLines("Wish you will come again !");
     }
-
+    
+    /**
+     * To display instruction
+     */
     private void showGuidance() {
         String line1 = "-Type number to add to cart. e.g. 1\n";
         String line2 = "-Type \"Check\" to check out.\n";
@@ -76,7 +88,11 @@ public class ShoppingModule {
         String line4 = "-Type \"q\" to quit.";
         System.out.println(line1 + line2 + line3 + line4);
     }
-
+    
+    /**
+     * To add a product to the cart
+     * @param productID the ID that identifies a product
+     */
     private void addToCart(Integer productID) {
         if (this.sd.getProducts().containsKey(productID)) {
             Product temp = this.sd.getProducts().get(productID);
@@ -86,7 +102,11 @@ public class ShoppingModule {
             Utilities.addLines("This is not an valid product ID.");
         }
     }
-
+    
+    /**
+     * To remove a product from the cart
+     * @param productID the ID that identifies a product
+     */
     private void removeFromCart(Integer productID) {
         if (this.cart.hasProduct(this.sd.getProducts().get(productID))) {
             this.cart.removeFromCart(this.sd.getProducts().get(productID));

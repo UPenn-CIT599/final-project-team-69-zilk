@@ -13,11 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderTest {
 
-    Order o1 = new Order(2, 3, 12.0, new Date());
+	Date d1 = new Date();
+	Order o1 = new Order(2, 3, 12.0, d1);
 
     @Test
     void testGetOrderTime() {
-        assertEquals(o1.getOrderTime(), new Date());
+        assertEquals(o1.getOrderTime(), d1);
     }
 
     @Test
