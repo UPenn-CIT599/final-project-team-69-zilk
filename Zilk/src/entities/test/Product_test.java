@@ -11,21 +11,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductTest {
 
-    Product p1 = new Product(1, "bbd", 12.0);
+	private int productID = 1;
+	private String productName = "product name";
+	private Double productPrice = 12.0;
 
-    @Test
-    void testGetProductID() {
-        assertEquals(p1.getProductID(), 1);
-    }
+	private Product product = new Product(this.productID, this.productName, this.productPrice);
 
-    @Test
-    void testGetProductPrice() {
-        assertEquals(p1.getProductPrice(), 12.0);
-    }
+	@Test
+	void testCanGetProductID() {
+		assertEquals(this.product.getProductID(), this.productID);
+	}
 
-    @Test
-    void testGetProductName() {
-        assertEquals(p1.getProductName(), "bbd");
-    }
+	@Test
+	void testCanGetProductPrice() {
+		assertEquals(product.getProductPrice(), this.productPrice);
+	}
+
+	@Test
+	void testCanGetProductName() {
+		assertEquals(product.getProductName(), this.productName);
+	}
 
 }

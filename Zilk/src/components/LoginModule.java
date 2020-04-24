@@ -4,131 +4,131 @@ import src.Common.Utilities;
 import src.entities.NormalUser;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
- * Login Module control login and register part of the users.
- * 1. Login part
- * 2. Register part
- * **/
+ * Login Module control login and register part of the users. 1. Login part 2.
+ * Register part
+ **/
 public class LoginModule {
-    private SharedData sd;
-    private NormalUser user;
 
-    public LoginModule(SharedData sd) throws IOException {
-        this.sd = sd;
-        this.genWelcomeMsg();
-        this.switcher();
-        this.sd.setUser(user);
-    }
-    
-    /**
-     * To show welcome message
-     */
-    private void genWelcomeMsg() {
-        String welcome = "Welcome to the Zilk website!\n";
-        String guidance = "For new user, please type \"register\", for old user please type \"login\".";
-        Utilities.addLines(welcome + guidance);
-    }
+	private SharedData sd;
+	private NormalUser user;
 
-    /**
-     * Switch to register or login process
-     * @throws IOException
-     */
-    private void switcher() throws IOException {
-        Scanner sc = this.sd.getSc();
-        String cmd = sc.nextLine().toLowerCase();
+	public LoginModule(SharedData sd) throws IOException {
+		this.sd = sd;
+		this.genWelcomeMsg();
+		this.switcher();
+		this.sd.setUser(user);
+	}
 
-        boolean isEnd = true;
-        while (isEnd) {
-            if (cmd.equals("register")) {
-                isEnd = false;
-            } else if (cmd.equals("login")) {
-                isEnd = false;
-            } else {
-                System.out.println("Please type valid command: \"register\" or \"login\".\n");
-                cmd = sc.nextLine().toLowerCase();
-            }
-        }
+	private void genWelcomeMsg() {
+		String welcome = "Welcome to the Zilk website!\n";
+		String guidance = "For new user, please type \"register\", for old user please type \"login\".";
+		Utilities.addLines(welcome + guidance);
+	}
 
-        if (cmd.equals("register")) {
-            this.Register();
-        } else {
-            this.Login();
-        }
-    }
+	/* Switch to register or login process. */
+	private void switcher() throws IOException {
+		Scanner sc = this.sd.getSc();
+		String cmd = sc.nextLine().toLowerCase();
 
-    /**
-     * Interact with the users data to confirm if user exists
-     * @throws IOException
-     */
-    private void Login() throws IOException {
-        // initial login
-        Scanner sc = this.sd.getSc();
-        System.out.print("Please input your username: ");
-        String username = sc.nextLine();
-        System.out.print("Please input your password: ");
-        String password = sc.nextLine();
+		boolean isEnd = true;
+		while (isEnd) {
+			if (cmd.equals("register")) {
+				isEnd = false;
+			} else if (cmd.equals("login")) {
+				isEnd = false;
+			} else if (cmd.equals("q")) {
+				return;
+			} else {
+				System.out.println("Please type valid command: \"register\" or \"login\".\n");
+				cmd = sc.nextLine().toLowerCase();
+			}
+		}
 
-        // router and user detection
-        this.user = this.sd.getUsers().get(username);
-        while (!this.sd.getUsers().containsKey(username) || !password.equals(this.sd.getUsers().get(username).getPassword())) {
-            // validation
-            System.out.println("Sorry, it seems you are not a registered user.");
-            System.out.println("If you want to register, please type \"register\". " +
-                    "If you want to input again, please type \"again\". (type any key to exit)");
-            String cmd = sc.nextLine();
+		if (cmd.equals("register")) {
+			this.Register();
+		} else {
+			this.Login();
+		}
+	}
 
-            // router
-            if (cmd.equals("register")) {
-                this.Register();
-                break;
-            } else if (cmd.equals("again")) {
-                System.out.print("Please input your username: ");
-                password = sc.nextLine();
-                System.out.print("Please input your password: ");
-                username = sc.nextLine();
-                this.user = this.sd.getUsers().get(username);
-            } else {
-                return;
-            }
-        }
-    }
+	/* Interact with the users data to confirm if user exist. */
+	private void Login() throws IOException {
+		// initial login
+		Scanner sc = this.sd.getSc();
+		System.out.print("Please input your username: ");
+		String username = sc.nextLine();
+		System.out.print("Please input your password: ");
+		String password = sc.nextLine();
 
-    /**
-     * To validate new user and store user data
-     * @throws IOException
-     */
-    private void Register() throws IOException {
-        Scanner sc = this.sd.getSc();
-        String username, password;
-        System.out.print("Please input your username: ");
-        username = sc.nextLine();
+		// router and user detection
+		this.user = this.sd.getUsers().get(username);
+		while (!this.sd.getUsers().containsKey(username)
+				|| !password.equals(this.sd.getUsers().get(username).getPassword())) {
+			// validation
+			System.out.println("Sorry, it seems you are not a registered user.");
+			System.out.println("If you want to register, please type \"register\". "
+					+ "If you want to input again, please type \"again\". (type any key to exit)");
+			String cmd = sc.nextLine();
 
-        // Validation
-        while (this.sd.getUsers().containsKey(username)) {
-            System.out.print("This username has been occupied. Please try a new one.\n");
-            username = sc.nextLine();
-        }
+			// router
+			if (cmd.equals("register")) {
+				this.Register();
+				break;
+			} else if (cmd.equals("again")) {
+				System.out.print("Please input your username: ");
+				password = sc.nextLine();
+				System.out.print("Please input your password: ");
+				username = sc.nextLine();
+				this.user = this.sd.getUsers().get(username);
+			} else {
+				return;
+			}
+		}
+	}
 
-        System.out.print("Please input your password: ");
-        password = sc.nextLine();
+	/* Validate new user and store user data. */
+	private void Register() throws IOException {
+		Scanner sc = this.sd.getSc();
+		String username, password;
 
-        // Confirmation
-        System.out.println("-------------Double Check ------------");
-        System.out.println("Username: " + username);
-        System.out.println("Password: " + password);
-        System.out.println("Please confirm your username and password. (Y or N) \n");
+		// Validation
+		String[] info = this.validation(sc, "");
+		username = info[0];
+		password = info[1];
+		// Store data
+		this.user = new NormalUser(this.sd.getNextUserID(), username, password);
+		this.sd.updateUsers(username, password);
+	}
 
-        // Router
-        String cmd = sc.nextLine().toLowerCase();
-        while (!cmd.equals("y") && !cmd.equals("n")) {
-            System.out.println("Please type \"Y\" or \"N\".\n");
-            cmd = sc.nextLine().toLowerCase();
-        }
+	private String[] validation(Scanner sc, String cmd) {
+		String username = null, password = null;
 
-        // Store data
-        this.user = new NormalUser(this.sd.getNextUserID(), username, password);
-        this.sd.updateUsers(username, password);
-    }
+		while (!cmd.equals("y")) {
+			System.out.print("Please input your username: ");
+			username = sc.nextLine();
+
+			while (this.sd.getUsers().containsKey(username)) {
+				System.out.print("This username has been occupied. Please type in a new one: ");
+				username = sc.nextLine();
+			}
+
+			System.out.print("Please input your password: ");
+			password = sc.nextLine();
+
+			System.out.println("-------------Double Check ------------");
+			System.out.println("Username: " + username);
+			System.out.println("Password: " + password);
+			System.out.println("Please confirm your username and password. (Y or N) \n");
+
+			cmd = sc.nextLine().toLowerCase();
+		}
+
+		return new String[] { username, password };
+	}
+
 }

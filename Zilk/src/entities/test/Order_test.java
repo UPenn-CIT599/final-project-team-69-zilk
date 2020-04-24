@@ -2,6 +2,7 @@ package src.entities.test;
 
 import src.entities.Order;
 import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
 
 import java.util.Date;
 
@@ -13,27 +14,36 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderTest {
 
-	Date d1 = new Date();
-	Order o1 = new Order(2, 3, 12.0, d1);
+	private Integer orderID = 2;
+	private Integer userID = 3;
+	private Double amount = 12.0;
+	private Date orderTime = new Date();
 
-    @Test
-    void testGetOrderTime() {
-        assertEquals(o1.getOrderTime(), d1);
-    }
+	private Order order = new Order(this.orderID, this.userID, this.amount, this.orderTime);
 
-    @Test
-    void testGetOrderID() {
-        assertEquals(o1.getOrderID(), 2);
-    }
+	@Test
+	void testClassIsCorrect() {
+		assertTrue(this.order.getClass().equals(Order.class));
+	}
 
-    @Test
-    void testGetUserID() {
-        assertEquals(o1.getUserID(), 3);
-    }
+	@Test
+	void testCanGetOrderTime() {
+		assertEquals(this.order.getOrderTime(), this.orderTime);
+	}
 
-    @Test
-    void testGetAmount() {
-        assertEquals(o1.getAmount(), 12.0);
-    }
+	@Test
+	void testCanGetOrderID() {
+		assertEquals(this.order.getOrderID(), this.orderID);
+	}
+
+	@Test
+	void testCanGetUserID() {
+		assertEquals(this.order.getUserID(), this.userID);
+	}
+
+	@Test
+	void testCanGetAmount() {
+		assertEquals(this.order.getAmount(), this.amount);
+	}
 
 }

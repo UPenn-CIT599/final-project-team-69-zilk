@@ -1,43 +1,83 @@
 package src.entities.test;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import src.entities.Cart;
 import src.entities.NormalUser;
 import src.entities.Product;
+import src.entities.Cart;
 
-//import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
 
 /**
  * This is the unit test part for Cart.
  **/
 class CartTest {
 
-    Product p1 = new Product(1, "a1b1", 12.50);
-    Product p2 = new Product(3, "h5b5", 13.50);
-    
-    NormalUser u1 = new NormalUser(0, "karen", "123");
-    
-    Cart c1 = new Cart(u1);
-    
+	private NormalUser user = new NormalUser(1, "name", "password");
+	private Product product = new Product(1, "product name", 12.0);
+	private Cart cart;
 
-    @Test
-    void testHasProduct() {
-    	
-    	c1.addToCart(p1);
-    	c1.addToCart(p2);
-    	assertTrue(c1.hasProduct(p1));
-    }
+	private void resetCart() {
+		this.cart = new Cart(user);
+	}
 
 	@Test
-    void testShowAmount() {
-		
-		c1.addToCart(p1);
-    	c1.addToCart(p2);
-		assertEquals(c1.showAmount(), 26.0);
-        
-    }
+	void testClassIsCorrect() {
+		this.resetCart();
+		assertTrue(this.cart.getClass().equals(Cart.class));
+	}
+
+	@Test
+	void testCanAddProductToCart() {
+		this.resetCart();
+
+		int productsSizeBefore = this.cart.getproducts().size();
+		this.cart.addToCart(this.product);
+		ArrayList<Product> productsAfter = this.cart.getproducts();
+
+		assertTrue(productsAfter.contains(this.product));
+		assertEquals(productsAfter.size() - productsSizeBefore, 1);
+	}
+
+	@Test
+	void testCanRemoveFromCart() {
+		this.resetCart();
+		this.cart.addToCart(this.product);
+
+		int productsSizeBefore = this.cart.getproducts().size();
+		this.cart.removeFromCart(this.product);
+		ArrayList<Product> productsAfter = this.cart.getproducts();
+
+		assertFalse(productsAfter.contains(this.product));
+		assertEquals(productsAfter.size() - productsSizeBefore, -1);
+	}
+
+	@Test
+	void testHasProduct() {
+		this.resetCart();
+		ArrayList<Product> products = this.cart.getproducts();
+		this.cart.addToCart(product);
+		assertTrue(products.contains(this.product));
+	}
+
+	@Test
+	void testCanShowAmount() {
+		this.resetCart();
+		this.cart.addToCart(this.product);
+
+		Double totalAmount = 0.0;
+		for (Product p : this.cart.getproducts()) {
+			totalAmount += p.getProductPrice();
+		}
+		assertEquals(this.cart.showAmount(), totalAmount);
+	}
+
+	@Test
+	void testCartHasUser() {
+		this.resetCart();
+		assertEquals(this.cart.getUser(), this.user);
+	}
 
 }
