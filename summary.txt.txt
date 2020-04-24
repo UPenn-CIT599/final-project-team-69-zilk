@@ -1,0 +1,12 @@
+Zilk Online Website
+
+Description: We build one online website from the command line (ignoring network). Users can log in, add products to cart and check out. 
+
+Work Breakdown :
+- Build Basic Entities class : NormalUser, Order, Product, Cart
+- Build Modules to help user navigate: Login Module, Shopping Module, Checkout Module, Shareddata Module
+- Build Unit tests for all entities class: order_Test etc. (no integration test now)
+
+
+Github Link:  https://github.com/UPenn-CIT599/final-project-team-69-zilk
+(Our github README file has a more complete introduction and design.)

@@ -13,7 +13,6 @@ import java.util.Scanner;
  * Register part
  **/
 public class LoginModule {
-
 	private SharedData sd;
 	private NormalUser user;
 
@@ -86,7 +85,8 @@ public class LoginModule {
 				username = sc.nextLine();
 				this.user = this.sd.getUsers().get(username);
 			} else {
-				return;
+				System.out.println("Successfully exit.\n");
+				System.exit(0);
 			}
 		}
 	}
