@@ -58,16 +58,16 @@ The whole business logic of Register might be very complex. The below picture ha
 - If the username has been occupied, user need to input again.
 - If the username has not been used, user will be able to register and then enter the shopping part after double check.
 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_1.PNG"height = 400px/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_1.PNG" height = 400px/>
 
 #### Step 1.2 - Login
 Login will be a little bit complex. Generally speaking, we have provided 3 options:
 - User can choose to register a new account if user doesn't have a valid account. Then, user can enter the shopping part.
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_2.PNG"height = 400px/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_2.PNG" height = 400px/>
 - User can log out if he/she shows no interest in this part. 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_3.PNG"height = 400px/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_3.PNG" height = 400px/>
 - User can successfully log in the shopping part if the username and password are both correct.
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_4.PNG"height = 400px/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_4.PNG" height = 400px/>
 
 ### Step 2 - Shopping Part
 The whole shopping part is very simple. Currently, we only have 3 products in out website. The shopping part has 4 options.
