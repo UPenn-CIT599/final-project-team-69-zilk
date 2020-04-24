@@ -44,13 +44,13 @@ We used very simple data model as this is not our top priority for this project.
 - This is a normal Java Project which can be executed from the Eclipse. The executable file is the Zilk/src/main.java.
 - All interative commands are from the command line. We are using command line to mock the real website.
 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/FileLocation.PNG" />
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/FileLocation.PNG" height = 400px/>
 
 
 ### Step 1 - Login Part
 There are 2 ways for users to login. If the user the a new user, register option has been provied. If this is an existing user, this user can log in to the website.
 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_0.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_0.PNG" height = 400px/>
 
 
 #### Step 1.1 - Register
@@ -58,16 +58,16 @@ The whole business logic of Register might be very complex. The below picture ha
 - If the username has been occupied, user need to input again.
 - If the username has not been used, user will be able to register and then enter the shopping part after double check.
 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_1.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_1.PNG"height = 400px/>
 
 #### Step 1.2 - Login
 Login will be a little bit complex. Generally speaking, we have provided 3 options:
 - User can choose to register a new account if user doesn't have a valid account. Then, user can enter the shopping part.
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_2.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_2.PNG"height = 400px/>
 - User can log out if he/she shows no interest in this part. 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_3.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_3.PNG"height = 400px/>
 - User can successfully log in the shopping part if the username and password are both correct.
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_4.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_4.PNG"height = 400px/>
 
 ### Step 2 - Shopping Part
 The whole shopping part is very simple. Currently, we only have 3 products in out website. The shopping part has 4 options.
@@ -84,6 +84,6 @@ The checkout part is very very simple. As this will be a huge part including the
 <img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/Checkout.PNG" height = 400px/>
 
 ### Others Unit Test
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/unit_test.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/unit_test.PNG" height = 400px/>
 
 [More](https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/design.md)
