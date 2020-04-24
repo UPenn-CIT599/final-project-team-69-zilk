@@ -21,7 +21,7 @@ We will implement 4 modules for the online website. User will first login/regist
 - SharedData: The integrated data module which manages all data inputs and data outputs. It also contains all in-memory data and provides query API or commit API for other modules. All data related actions will be mocked from reading/writing to files.
 (See below chart.)
 
-<img src="./images/FlowChart.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/FlowChart.PNG"/>
 
 ## Part2. Project Structure
 
@@ -31,12 +31,12 @@ The whole project consists of 4 different parts.
 - Entities: store different entities
 - Resources: all required resources
 
-<img src="./images/ProjectStructure.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/ProjectStructure.PNG"/>
 
 ## Part3. Data Model
 
 We used very simple data model as this is not our top priority for this project.
-<img src="./images/DataModel.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/DataModel.PNG"/>
 
 
 ## How To Run
@@ -44,13 +44,13 @@ We used very simple data model as this is not our top priority for this project.
 - This is a normal Java Project which can be executed from the Eclipse. The executable file is the Zilk/src/main.java.
 - All interative commands are from the command line. We are using command line to mock the real website.
 
-<img src="./images/FileLocation.PNG" />
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/FileLocation.PNG" />
 
 
 ### Step 1 - Login Part
 There are 2 ways for users to login. If the user the a new user, register option has been provied. If this is an existing user, this user can log in to the website.
 
-<img src="./images/LoginPart_0.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_0.PNG"/>
 
 
 #### Step 1.1 - Register
@@ -58,16 +58,16 @@ The whole business logic of Register might be very complex. The below picture ha
 - If the username has been occupied, user need to input again.
 - If the username has not been used, user will be able to register and then enter the shopping part after double check.
 
-<img src="./images/LoginPart_1.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_1.PNG"/>
 
 #### Step 1.2 - Login
 Login will be a little bit complex. Generally speaking, we have provided 3 options:
 - User can choose to register a new account if user doesn't have a valid account. Then, user can enter the shopping part.
-<img src="./images/LoginPart_2.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_2.PNG"/>
 - User can log out if he/she shows no interest in this part. 
-<img src="./images/LoginPart_3.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_3.PNG"/>
 - User can successfully log in the shopping part if the username and password are both correct.
-<img src="./images/LoginPart_4.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/LoginPart_4.PNG"/>
 
 ### Step 2 - Shopping Part
 The whole shopping part is very simple. Currently, we only have 3 products in out website. The shopping part has 4 options.
@@ -75,15 +75,15 @@ The whole shopping part is very simple. Currently, we only have 3 products in ou
 - Remove product from the cart. User can type in negative integer ot digits to remove product from their cart.
 - Quit from shopping part. User can log out by tying q.
 - Enter the Check out stage. User can type in "Check" to check out.
-<img src="./images/ShoppingModule.PNG" height = 400px/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/ShoppingModule.PNG" height = 400px/>
 
 ### Step 3 - Checkout Part
 The checkout part is very very simple. As this will be a huge part including the payment and validation, our design and implementation only will support the order sent to mailbox. Users will pay via the order detailed link.
 - User can confirm the order or quit from the website.
 
-<img src="./images/Checkout.PNG" height = 400px/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/Checkout.PNG" height = 400px/>
 
 ### Others Unit Test
-<img src="./images/unit_test.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/unit_test.PNG"/>
 
 [More](https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/design.md)
