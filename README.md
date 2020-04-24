@@ -44,7 +44,7 @@ We used very simple data model as this is not our top priority for this project.
 - This is a normal Java Project which can be executed from the Eclipse. The executable file is the Zilk/src/main.java.
 - All interative commands are from the command line. We are using command line to mock the real website.
 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/FileLocation.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/FileLocation.png"/>
 
 
 ### Step 1 - Login Part
@@ -75,13 +75,13 @@ The whole shopping part is very simple. Currently, we only have 3 products in ou
 - Remove product from the cart. User can type in negative integer ot digits to remove product from their cart.
 - Quit from shopping part. User can log out by tying q.
 - Enter the Check out stage. User can type in "Check" to check out.
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/ShoppingModule.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/ShoppingModule.png"/>
 
 ### Step 3 - Checkout Part
 The checkout part is very very simple. As this will be a huge part including the payment and validation, our design and implementation only will support the order sent to mailbox. Users will pay via the order detailed link.
 - User can confirm the order or quit from the website.
 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/Checkout.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/Checkout.png"/>
 
 ### Others Unit Test
 <img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/unit_test.PNG"/>
