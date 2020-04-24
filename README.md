@@ -85,5 +85,3 @@ The checkout part is very very simple. As this will be a huge part including the
 
 ### Others Unit Test
 <img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/images/unit_test.PNG"/>
-
-[More](https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/design.md)
