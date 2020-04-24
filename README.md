@@ -21,7 +21,7 @@ We will implement 4 modules for the online website. User will first login/regist
 - SharedData: The integrated data module which manages all data inputs and data outputs. It also contains all in-memory data and provides query API or commit API for other modules. All data related actions will be mocked from reading/writing to files.
 (See below chart.)
 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/FlowChart.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/tree/master/images/FlowChart.PNG"/>
 
 ## Part2. Project Structure
 
@@ -31,9 +31,9 @@ The whole project consists of 4 different parts.
 - Entities: store different entities
 - Resources: all required resources
 
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/ProjectStructure.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/tree/master/images/ProjectStructure.PNG"/>
 
 ## Part3. Data Model
 
 We used very simple data model as this is not our top priority for this project.
-<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/blob/master/DataModel.PNG"/>
+<img src="https://github.com/UPenn-CIT599/final-project-team-69-zilk/tree/master/images/DataModel.PNG"/>
